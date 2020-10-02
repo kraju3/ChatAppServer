@@ -18,6 +18,9 @@ const server = app.listen(process.env.PORT,()=>{
 const io = require('socket.io').listen(server);
 
 app.post('/server/login',LoginRoom)
+app.get('/',(req,res,next)=>{
+    res.send("Chatter App Server is running")
+})
 
 io.on('connection',(socket)=>{
 
