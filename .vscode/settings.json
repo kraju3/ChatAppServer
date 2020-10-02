@@ -2,5 +2,7 @@
     "appService.zipIgnorePattern": [
         "node_modules{,/**}",
         ".vscode{,/**}"
-    ]
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/0584eaea-ffe2-4eae-bed1-50ec558a8bfa/resourceGroups/chatapprg/providers/Microsoft.Web/sites/chatterserver",
+    "appService.deploySubpath": "."
 }
