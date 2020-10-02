@@ -1,14 +1,15 @@
+require('dotenv').config()
+
 const app = require('express')();
 const redis = require('redis');
 const bodyParser = require('body-parser')
 const redisClient = redis.createClient();
 const cors = require('cors')
-const port = 3000;
 const {LoginRoom,getRooms} =require('./lib/roomMw');
 
 app.use(cors());
 app.use(bodyParser.json());
-const server = app.listen(port,()=>{
+const server = app.listen(process.env.PORT,()=>{
     console.log(`Server is running on port ${port}`)
 });
 
