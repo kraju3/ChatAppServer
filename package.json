@@ -1,0 +1,27 @@
+{
+  "name": "socketio-backend",
+  "version": "1.0.0",
+  "description": "A chat server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "npm test"
+  },
+  "keywords": [
+    "socket.io",
+    "chat"
+  ],
+  "author": "KR",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "redis": "^3.0.2",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
