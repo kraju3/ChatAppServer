@@ -10,7 +10,7 @@ const {LoginRoom,getRooms} =require('./lib/roomMw');
 app.use(cors());
 app.use(bodyParser.json());
 const server = app.listen(process.env.PORT,()=>{
-    console.log(`Server is running on port ${port}`)
+    console.log(`Server is running on port ${process.env.PORT}`)
 });
 
 const io = require('socket.io').listen(server);
