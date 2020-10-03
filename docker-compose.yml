@@ -1,18 +1,5 @@
 version: "3"
-services: 
-    server:
-        image: chatservice:v1
-        restart: always
-        ports:
-            - "8080:8080"
-        entrypoint: ["npm", "start"]
-        environment: 
-            - PORT=8080
-            - REDIS_PORT=6379
-        links: 
-            - redis
-        networks: 
-            - chatnetwork
+services:
     redis:
         image: redis
         restart: always
@@ -22,6 +9,19 @@ services:
             - dbdata:/data/db
         ports:
             - '6379:6379'
+        networks: 
+            - chatnetwork
+    server:
+        image: chatservice:latest
+        restart: always
+        ports:
+            - "3000:3000"
+        entrypoint: ["npm", "start"]
+        environment: 
+            - PORT=3000
+            - REDIS_HOST=redis
+        links: 
+            - redis
         networks: 
             - chatnetwork
 networks: 

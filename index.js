@@ -3,9 +3,7 @@ require('dotenv').config()
 const app = require('express')();
 const redis = require('redis');
 const bodyParser = require('body-parser')
-const redisClient = redis.createClient({
-    port:process.env.REDIS_PORT
-});
+const redisClient = redis.createClient({host:process.env.REDIS_HOST||'localhost'});
 const cors = require('cors')
 const {LoginRoom,getRooms} =require('./lib/roomMw');
 
