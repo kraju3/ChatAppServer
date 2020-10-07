@@ -12,13 +12,13 @@ services:
         networks: 
             - chatnetwork
     server:
-        image: chatservice:latest
+        image: chatterserver.azurecr.io/chatservice:latest
         restart: always
         ports:
-            - "3000:3000"
+            - "8080:8080"
         entrypoint: ["npm", "start"]
         environment: 
-            - PORT=3000
+            - PORT=8080
             - REDIS_HOST=redis
         links: 
             - redis
